@@ -24,3 +24,13 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn clean install
+
+    - name: Build & push Docker image
+      uses: mr-smithers-execellent/docker-build.push@v5
+      with:
+        image: reynaldop08/springboot-images-new
+        tags: lastest
+        registry: docker.io
+        dockerfile: Dockerfile
+        username: ${{secrect.DOCKER_USERNAME}}
+        password: ${{secrect.DOCKER_PASSWORD}}
