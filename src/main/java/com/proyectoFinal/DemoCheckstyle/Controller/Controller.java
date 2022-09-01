@@ -78,7 +78,7 @@ public class Controller {
         try {
             return this.iService.deleteContact(dni);
         } catch (Exception e) {
-            LogJava.error("Ocurrio un error Metodo deleteCliente " , e);
+            LogJava.error("Ocurrio un error Metodo deleteCliente " + e.getMessage());
         }finally {
             LogJava.info("[Fin Controller Client] Metodo deleteCliente");
         }
